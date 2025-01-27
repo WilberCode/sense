@@ -1,0 +1,127 @@
+{{ 'section-banner-adidas.css' | asset_url | stylesheet_tag }}
+
+<section>
+    <div class="banner-adidas  " >  
+        {% if section.settings.image_main != blank %}
+              <img class="banner-adidas__image"  src="{{ section.settings.image_main  | img_url: 'master' }}" alt="{{ section.settings.image_main.alt }}">
+        {% endif %}   
+        <div class="banner-adidas-content {{ section.settings.horizontal_align }} {{ section.settings.vertical_align }}">
+          {% if section.settings.title != blank %} 
+            <h1 class="banner-adidas__title">{{ section.settings.title }}</h1>
+          {% endif %}
+          {% if section.settings.description != blank %}
+            <p class="banner-adidas__subtitle">{{ section.settings.description }}</p>
+          {% endif %}  
+ 
+          {% if section.blocks.size > 0 %}
+            <div  class="banner-adidas-buttons" >
+              {% for block in section.blocks %}
+                {% if block.type == 'buttons' %}
+                  <a class="banner-adidas-buttons__link" href="{{ block.settings.button_link }}">{{ block.settings.button_label }}</a>
+                {% endif %}
+              {% endfor %} 
+            </div>
+          {% endif %}
+          
+        </div>  
+    </div>  
+   
+</section> 
+
+{% schema %}
+    {
+        "name":"Adidas banner", 
+        "class":"adidas-banner-section",
+        "tag": "section",
+        "settings":[
+            {
+                "type":"image_picker",
+                "id":"image_main",
+                "label":"Main Image"
+            },
+            {
+                "type":"text",
+                "id":"title",
+                "label":"Title",
+                "default":"Adidas SALES"
+            },
+            {
+                "type":"text",
+                "id":"description",
+                "label":"Descripción",
+                "default":"Descion del banner"
+            },
+            {
+          "type": "select",
+          "id": "vertical_align",
+          "label": "Vertical Align",
+          "options": [
+            {
+              "value": "top",
+              "label": "Top"
+            }, 
+            {
+              "value": "middle",
+              "label": "Middle"
+            }, 
+            {
+              "value": "bottom",
+              "label": "Bottom"
+            }
+          ],
+          "default": "middle"
+        },
+        {
+          "type": "select",
+          "id": "horizontal_align",
+          "label": "Horizontal Align",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            }, 
+            {
+              "value": "center",
+              "label": "Center"
+            }, 
+            {
+              "value": "right",
+              "label": "Right"
+            } 
+          ],
+          "default": "center"
+        }
+        ],
+        "blocks": [ 
+            {
+                "type": "buttons",
+                "name": "Botón", 
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "button_label",
+                        "default": "Nombre del botón",
+                        "label": "Texto"
+                    },
+                    {
+                        "type": "url",
+                        "id": "button_link",
+                        "label": "Enlace"
+                    }
+                
+                ]
+            }
+        ],
+        "presets":[
+            {
+                "category":"Image",
+                "name":"Adidas banner",
+                "blocks": [ 
+                    {
+                    "type": "buttons"
+                    }
+                ]
+            }
+        ]
+    } 
+{% endschema %} 
