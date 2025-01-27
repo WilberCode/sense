@@ -65,7 +65,7 @@
         "image_main": "shopify://shop_images/Laesquinabar.jpg",
         "title": "Adidas SALES",
         "description": "Descion del banner",
-        "vertical_align": "middle",
+        "vertical_align": "top",
         "horizontal_align": "right"
       }
     },
