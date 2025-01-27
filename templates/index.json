@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "image-with-text": {
@@ -38,6 +47,28 @@
         "padding_bottom": 0
       }
     },
+    "banner_adidas_iew4MC": {
+      "type": "banner-adidas",
+      "blocks": {
+        "buttons_PGykfJ": {
+          "type": "buttons",
+          "settings": {
+            "button_label": "Nombre del botón",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "buttons_PGykfJ"
+      ],
+      "settings": {
+        "image_main": "shopify://shop_images/Laesquinabar.jpg",
+        "title": "Adidas SALES",
+        "description": "Descion del banner",
+        "vertical_align": "middle",
+        "horizontal_align": "center"
+      }
+    },
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
@@ -69,6 +100,7 @@
   },
   "order": [
     "image-with-text",
+    "banner_adidas_iew4MC",
     "featured-collection"
   ]
 }
